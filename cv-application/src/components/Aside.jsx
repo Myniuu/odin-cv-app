@@ -1,30 +1,81 @@
+import { useState } from "react";
 import { H2 } from "./H2";
 import { Form } from "./Form";
 import { Input } from "./Input";
 import { Wrapper } from "./Wrapper";
 import { Label } from "./Label";
+import { Button } from "./Button";
 
 export function Aside() {
+  const [formPersonal, setFormPersonal] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    setFormPersonal({
+      ...formPersonal,
+      fullName: "",
+      email: "",
+      phone: "",
+      address: "",
+    });
+  };
+
   return (
     <aside className="flex flex-col items-center justify-center gap-4 text-white">
-      <Form id="contact-form">
-        <H2 text="Contact" />
+      <Form id="personal-form">
+        <H2 text="Personal" />
         <Wrapper>
           <Label htmlFor="fullName" text="Full Name" />
-          <Input type="text" id="fullName" />
+          <Input
+            value={formPersonal.fullName}
+            onChange={(e) =>
+              setFormPersonal({ ...formPersonal, fullName: e.target.value })
+            }
+            type="text"
+            id="fullName"
+          />
         </Wrapper>
         <Wrapper>
           <Label htmlFor="email" text="Email" />
-          <Input type="email" id="email" />
+          <Input
+            value={formPersonal.email}
+            onChange={(e) =>
+              setFormPersonal({ ...formPersonal, email: e.target.value })
+            }
+            type="email"
+            id="email"
+          />
         </Wrapper>
         <Wrapper>
           <Label htmlFor="phone" text="Phone Number" />
-          <Input type="tel" id="phone" />
+          <Input
+            value={formPersonal.phone}
+            onChange={(e) =>
+              setFormPersonal({ ...formPersonal, phone: e.target.value })
+            }
+            type="tel"
+            id="phone"
+          />
         </Wrapper>
         <Wrapper>
           <Label htmlFor="address" text="Address" />
-          <Input type="text" id="address" />
+          <Input
+            value={formPersonal.address}
+            onChange={(e) =>
+              setFormPersonal({ ...formPersonal, address: e.target.value })
+            }
+            type="text"
+            id="address"
+          />
         </Wrapper>
+        <div className="flex justify-center">
+          <Button onClick={handleButtonClick} />
+        </div>
       </Form>
       <Form id="education-form">
         <H2 text="Education" />
@@ -48,6 +99,9 @@ export function Aside() {
           <Label htmlFor="location" text="Location" />
           <Input type="text" id="location" />
         </Wrapper>
+        <div className="flex justify-center">
+          <Button />
+        </div>
       </Form>
       <Form id="experience-form">
         <H2 text="Experience" />
@@ -71,6 +125,9 @@ export function Aside() {
           <Label htmlFor="description" text="Description" />
           <Input type="text" id="description" />
         </Wrapper>
+        <div className="flex justify-center">
+          <Button />
+        </div>
       </Form>
     </aside>
   );
