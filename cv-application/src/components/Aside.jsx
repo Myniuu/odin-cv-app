@@ -1,116 +1,77 @@
+import { H2 } from "./H2";
+import { Form } from "./Form";
 import { Input } from "./Input";
+import { Wrapper } from "./Wrapper";
+import { Label } from "./Label";
 
 export function Aside() {
   return (
     <aside className="flex flex-col items-center justify-center gap-4 text-white">
-      <form className="w-full space-y-2 rounded-lg border border-white bg-sky-950 p-8 text-center">
-        <h2 className="mb-6 text-3xl font-bold">Personal</h2>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="fullName" className="text-xl font-semibold">
-            Full Name
-          </label>
+      <Form id="contact-form">
+        <H2 text="Contact" />
+        <Wrapper>
+          <Label htmlFor="fullName" text="Full Name" />
           <Input type="text" id="fullName" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="email" className="text-xl font-semibold">
-            Email
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="email" text="Email" />
           <Input type="email" id="email" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="phone" className="text-xl font-semibold">
-            Phone Number
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="phone" text="Phone Number" />
           <Input type="tel" id="phone" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="address" className="text-xl font-semibold">
-            Address
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="address" text="Address" />
           <Input type="text" id="address" />
-        </div>
-        <div className="flex justify-center">
-          <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
-            Submit
-          </button>
-        </div>
-      </form>
-      <form className="w-full space-y-2 rounded-lg border border-white bg-sky-950 p-8 text-center">
-        <h2 className="mb-6 text-3xl font-bold">Education</h2>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="school" className="text-xl font-semibold">
-            School
-          </label>
+        </Wrapper>
+      </Form>
+      <Form id="education-form">
+        <H2 text="Education" />
+        <Wrapper>
+          <Label htmlFor="school" text="School" />
           <Input type="text" id="school" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="degree" className="text-xl font-semibold">
-            Degree
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="degree" text="Degree" />
           <Input type="text" id="degree" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="startDate" className="text-xl font-semibold">
-            Start Date
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="startDate" text="Start Date" />
           <Input type="text" id="startDate" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="endDate" className="text-xl font-semibold">
-            End Date
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="endDate" text="End Date" />
           <Input type="text" id="endDate" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="location" className="text-xl font-semibold">
-            Location
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="location" text="Location" />
           <Input type="text" id="location" />
-        </div>
-        <div className="flex justify-center">
-          <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
-            Submit
-          </button>
-        </div>
-      </form>
-      <form className="w-full space-y-2 rounded-lg border border-white bg-sky-950 p-8 text-center">
-        <h2 className="mb-6 text-3xl font-bold">Experience</h2>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="position" className="text-xl font-semibold">
-            Position
-          </label>
+        </Wrapper>
+      </Form>
+      <Form id="experience-form">
+        <H2 text="Experience" />
+        <Wrapper>
+          <Label htmlFor="position" text="Position" />
           <Input type="text" id="position" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="companyName" className="text-xl font-semibold">
-            Company Name
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="company" text="Company" />
           <Input type="text" id="company" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="startDate" className="text-xl font-semibold">
-            Start Date
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="startDate" text="Start Date" />
           <Input type="text" id="startDate" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="endDate" className="text-xl font-semibold">
-            End Date
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="endDate" text="End Date" />
           <Input type="text" id="endDate" />
-        </div>
-        <div className="flex flex-col items-center space-y-4">
-          <label htmlFor="description" className="text-xl font-semibold">
-            Descripton
-          </label>
+        </Wrapper>
+        <Wrapper>
+          <Label htmlFor="description" text="Description" />
           <Input type="text" id="description" />
-        </div>
-        <div className="flex justify-center">
-          <button className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
-            Submit
-          </button>
-        </div>
-      </form>
+        </Wrapper>
+      </Form>
     </aside>
   );
 }
